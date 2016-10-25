@@ -23,10 +23,10 @@
 
 
 
-    <div ng-controller="MainController">
+    <div ng-init="choosePiece()" ng-controller="MainController">
         <ul class="board">
             <li class="section" ng-class="{'xo': (userSelectionArray.includes($index+1))}" ng-click="userSelected($index+1);" ng-repeat="piece in pieceCount">
-                {{(userSelectionArray.includes($index+1)) ? 'X' : '.'}}
+                {{(userSelectionArray.includes($index+1)) ? userPiece : ((computerSelectionArray.includes($index+1)) ? computerPiece : '.')}}
 
             </li>
         </ul>
